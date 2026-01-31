@@ -4,6 +4,6 @@ jobs:
   print:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "${{ github.actor }}"
+      - run: echo "${GITHUB_ACTOR}"
       - if: ${{ github.event_name == 'pull_request' }}
         run: echo "${{ github.event.pull_request.title }}"
