@@ -1,0 +1,9 @@
+name: Contexts
+on: [push, pull_request]
+jobs:
+  print:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "${{ github.actor }}"
+      - if: ${{ github.event_name == 'pull_request' }}
+        run: echo "${{ github.event.pull_request.title }}"
